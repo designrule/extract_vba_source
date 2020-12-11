@@ -10,6 +10,7 @@ oletools = "^0.56.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
+flake8 = "^3.8.4"
 
 [build-system]
 requires = ["poetry>=0.12"]
