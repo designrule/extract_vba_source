@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "extract_vba_source"
+version = "0.1.0"
+description = ""
+authors = ["kkanazaw <new.frontier2006@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+oletools = "^0.56.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry.scripts]
+extract_vba_source = "extract_vba_source.extract_vba_source:main"
+
+
