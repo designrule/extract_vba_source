@@ -7,6 +7,7 @@ from oletools.olevba import VBA_Parser, VBA_Project, filter_vba
 
 OFFICE_FILE_EXTENSIONS = (
     '.xlsb', '.xls', '.xlsm', '.xla', '.xlt', '.xlam',  # Excel book with macro
+    '.pptm',
 )
 
 
