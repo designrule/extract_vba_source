@@ -31,12 +31,12 @@ def get_args():
 def get_source_paths(sources, recursive):
     for src in sources:
         p = Path(src)
-        if p.is_dir(): # If source is a directory, then find source files under it.
+        if p.is_dir():  # If source is a directory, then find source files under it.
             for file in p.glob("**/*" if recursive else "*"):
                 f = Path(file)
                 if not f.name.startswith('~$') and f.suffix.lower() in OFFICE_FILE_EXTENSIONS:
                     yield f.absolute()
-        else: # If source is a file, then return its absolute path.
+        else:  # If source is a file, then return its absolute path.
             yield p.absolute()
 
 
@@ -63,7 +63,7 @@ def extract_macros(parser: VBA_Parser, vba_encoding):
     else:
         parser.find_vba_projects()
         for (vba_root, project_path, dir_path) in parser.vba_projects:
-            project = VBA_Project(parser.ole_file, vba_root, project_path, dir_path, relaxed=False)
+            project = VBA_Project(parser.ole_file, vba_root, project_path, dir_path, relaxed=True)
             project.codec = vba_encoding
             project.parse_project_stream()
 
