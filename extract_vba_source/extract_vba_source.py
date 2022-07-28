@@ -392,7 +392,7 @@ def extract_macros(parser: VBA_Parser, vba_encoding):
             for results in extract_macros(subfile, vba_encoding):
                 yield results
     else:
-        VBA_Project.__init__ = 
+        VBA_Project.__init__ = vba_project_init
         parser.find_vba_projects()
         for (vba_root, project_path, dir_path) in parser.vba_projects:
             project = VBA_Project(parser.ole_file, vba_root, project_path, dir_path, relaxed=True)
