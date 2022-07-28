@@ -70,6 +70,22 @@ import email.feedparser
 import string  # for printable
 import json   # for json output mode (argument --json)
 
+import olefile
+from oletools.thirdparty.tablestream import tablestream
+from oletools.thirdparty.xglob import xglob, PathNotFoundException
+from oletools.thirdparty.oledump.plugin_biff import cBIFF
+from oletools import ppt_parser
+from oletools import oleform
+from oletools import rtfobj
+from oletools import crypto
+from oletools.common.io_encoding import ensure_stdout_handles_unicode
+from oletools.common import codepages
+from oletools import ftguess
+from oletools.common.log_helper import log_helper
+
+# a global logger object used for debugging:
+log = log_helper.get_or_create_silent_logger('olevba')
+
 def vba_project_init(self, ole, vba_root, project_path, dir_path, relaxed=True):
     """
         Extract VBA macros from an OleFileIO object.
