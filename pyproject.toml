@@ -6,7 +6,7 @@ authors = ["kkanazaw <new.frontier2006@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-oletools = "^0.56.0"
+oletools = "^0.60.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
