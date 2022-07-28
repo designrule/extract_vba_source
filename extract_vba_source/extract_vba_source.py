@@ -53,6 +53,22 @@ def get_outputpath(parent_dir: Path, filename: str, use_orig_extension: bool):
         subdir.mkdir(parents=True, exist_ok=True)
     return Path(subdir.joinpath(filename + ('.vb' if not use_orig_extension else '')))
 
+import traceback
+import sys
+import os
+import struct
+from io import BytesIO, StringIO
+import math
+import zipfile
+import re
+import argparse
+import binascii
+import base64
+import zlib
+import email  # for MHTML parsing
+import email.feedparser
+import string  # for printable
+import json   # for json output mode (argument --json)
 
 def vba_project_init(self, ole, vba_root, project_path, dir_path, relaxed=True):
     """
